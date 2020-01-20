@@ -1,5 +1,7 @@
 # dev aliases ----------------------------------------
 alias dev="cd /Users/gcman105/devel/PythonProjects/waf_dapp"
+alias dot="cd /Users/gcman105/dotfiles"
+alias hug="cd /Users/gcman105/devel/hugo"
 
 # vim aliases ----------------------------------------
 #alias vi="nvim"
@@ -10,16 +12,15 @@ alias vv="vifm"
 #alias =""
 
 # edit & source aliases ------------------------------
-alias ev="nvim /Users/gcman105/dotfiles/nvim/init.vim"
-alias et="nvim /Users/gcman105/dotfiles/.tmux.conf"
-alias ea="nvim /Users/gcman105/dotfiles/.aliases"
+alias ev="nvim /Users/gcman105/.vimrc"
+alias et="nvim /Users/gcman105/.tmux.conf"
+alias ea="nvim /Users/gcman105/.zsh_aliases"
 alias ez="nvim /Users/gcman105/.zshrc"
-alias em="nvim ./.tmuxinator.yml"
 alias sz="source /Users/gcman105/.zshrc"
 #alias =""
 
 # tmuxinator aliases ---------------------------------
-alias ml="mux local"
+alias ml="mux list"
 
 # git aliases ----------------------------------------
 alias gs="git status"
@@ -28,7 +29,9 @@ alias gaa="git add ."
 alias gl="git log --oneline --graph --histogram"
 alias gc="git commit -m "
 alias gp="git push "
-alias gsu="git submodule update --remote --merge"
+alias gma="git submodule add "
+alias gmi="git submodulei init"
+alias gmu="git submodule update --remote --merge"
 
 # artisan aliases ------------------------------------
 alias pm="python manage.py "
@@ -55,8 +58,6 @@ alias phpunit="vendor/bin/phpunit "
 alias ut="phpunit"
 
 # venv aliases ---------------------------------------
-#alias cve="python3 -m venv venv && . venv/bin/activate"
-alias cve="virtualenv venv && . venv/bin/activate"
+alias cve="python3 -m venv venv && . venv/bin/activate"
 alias ave=". venv/bin/activate"
 alias dve="deactivate"
-

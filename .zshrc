@@ -1,14 +1,33 @@
-# If you come from bash you might have to change your $PATH.
+# XDG Base Directory Specification -------------------------------------------
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+if [[ $HOME ]]; then
+  if [[ ! $XDG_DATA_HOME ]]; then
+    export XDG_DATA_HOME=$HOME/.local/share
+  fi
+
+  if [[ ! $XDG_CONFIG_HOME ]]; then
+    export XDG_CONFIG_HOME=$HOME/.config
+  fi
+
+  if [[ ! $XDG_DATA_DIRS ]]; then
+    export XDG_DATA_DIRS=/usr/local/share/:/usr/share/
+  fi
+
+  if [[ ! $XDG_CONFIG_DIRS ]]; then
+    export XDG_CONFIG_DIRS=/etc/xdg
+  fi
+
+  if [[ ! $XDG_CACHE_HOME ]]; then
+    export XDG_CACHE_HOME=$HOME/.cache
+  fi
+
+  # Path to your oh-my-zsh installation.
+  export ZSH=$HOME/.oh-my-zsh
+fi
+# end XDG Base Directory Specification -------------------
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
-export ZSH=/Users/gcman105/.oh-my-zsh
-
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="robbyrussell"
-#ZSH_THEME="agnoster"
 ZSH_THEME="cobalt2"
 
 # Would you like to use another custom folder than $ZSH/custom?
@@ -44,15 +63,6 @@ else
   export EDITOR='nvim'
 fi
 
-# Load pyenv automatically
-eval "$(pyenv init -)"
-if command -v pyenv 1>/dev/null 2>&1; then
-  eval "$(pyenv init -)"
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
@@ -72,14 +82,8 @@ export PATH="$(yarn global bin):$PATH"
 
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
+
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -99,3 +103,7 @@ source ~/.zsh_aliases
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="/usr/local/sbin:$PATH"
+
+export PATH=/Users/gcman105/.rbenv/shims:$PATH
+eval "$(rbenv init -)"
+
