@@ -20,6 +20,10 @@ alias sz="source /Users/gcman105/.zshrc"
 #alias =""
 
 # tmuxinator aliases ---------------------------------
+alias tl="tmux ls"
+alias ta="tmux attach -t "
+
+# tmuxinator aliases ---------------------------------
 alias ml="mux list"
 
 # git aliases ----------------------------------------
@@ -38,7 +42,7 @@ alias pm="python manage.py "
 alias pmmm="python manage.py makemigrations"
 alias pmm="python manage.py migrate"
 alias pms="python manage.py shell"
-alias pmsa="python manage.py startapp"
+alias pmsa="python manage.py runserver"
 
 # pip aliases ----------------------------------------
 alias pi="pip install "
